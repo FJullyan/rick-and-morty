@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://rick-and-morty-2g13.onrender.com";
 async function buscarPersonagens() {
     const resposta = await fetch(API_URL +"/personagens/dashboard");
     const personagens = await resposta.json();
