@@ -30,5 +30,13 @@ def personagens_dashboard():
     })
     return jsonify(personagens)
 
+@app.route("/personagens/buscar", methods=["GET"])
+def personagens_busca():
+    nome = request.args.get("nome")
+    resposta = requests.get(f"https://rickandmortyapi.com/api/character/?name={nome}")
+    return jsonify(resposta.json())
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
